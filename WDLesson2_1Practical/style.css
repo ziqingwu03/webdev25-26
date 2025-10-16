@@ -34,7 +34,7 @@ li{
 }
 
 /* Chalenge 6: Change the background color of the div to blue, color of the text to white and the weight of the font to bold.*/
-body{
+div{
     background-color: blue;
     color:white;
     font-weight: bold;

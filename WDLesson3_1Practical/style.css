@@ -10,6 +10,9 @@
     background-color:blueviolet;
 }
 /* Challenge 4: Give all elements with a class of container a display of flex */
+.container{
+    display:flex;
+}
 
 
 /* Challenge 5: Give all the images inside an element with a class of "container" a flex of 1, round the corner 10px, height of 150px 
@@ -34,4 +37,9 @@
 /* Challenge 7: When the user hovers an image change the color of the shadow to red */
 img:hover {
     box-shadow:red 10px 10px;
+}
+
+.translations span {
+    background-color: blue;
+    color:white;
 }

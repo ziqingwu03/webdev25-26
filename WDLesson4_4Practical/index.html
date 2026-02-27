@@ -39,12 +39,12 @@
     </div>
 
     <div class="container">
-      <br>
       <div class="card">
         <p style="width:1000px;margin:0 auto;"><span class="highlight" >Scenario:</span>Generate two random numbers for an addition problem for the user to answer. Let the user know if they got the correct answer otherwise display the correct solution.  Display an appropriate image based on whether they got the problem correct.</p>
-         <input type="button" onclick="generateProblem()" value="Generate problem">
          <div class="card">
-          <span id="problem"> ${num1}+ ${num2}=</span>
+          <input type="button" onclick="generateProblem()" value="Generate problem">
+          <br><br>
+          <span id="problem"> ? * ? = </span>
           <input type="text" placeholder="?" id="response">
           <input type="button" onclick="checkResponse ()" value="Check Response ">
           <hr>

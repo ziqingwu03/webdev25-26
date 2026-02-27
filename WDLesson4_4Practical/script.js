@@ -8,9 +8,12 @@
 
 let correct;
 function generateProblem(){
-let num1 = Math.floor(Math.random()*(20-0+1)+0);
-let num2 = Math.floor(Math.random()*(20-0+1)+0);
-let correct =num1 + num2; 
+       let prob = document.getElementById ("problem")
+       let n1 = Math.floor(Math.random()*(20-0+1)+0);
+       let n2 = Math.floor(Math.random()*21+0);
+       correct = n1 + n2; 
+       prob.innerHTML = '${n1} + ${n2} = ';
+
 
 
 
@@ -27,14 +30,20 @@ let correct =num1 + num2;
        4) Display msg in the output
 */
 function checkResponse(){
-       userResponse = document.getElementById();
-       output = document.getElementById("output");
-       msg =" ";
-       correctAnswer = "13";
-if (userResponse && userResponse.value == correctAnswer) {
-        msg = "correct! 'src='correct.webp'>";
-    } else {
-        msg = "Incorrect. The answer is " + correctAnswer {
-              "<img src='incorrect.png'>";
-        }
+       let user = parseInt(document.getElementById("response").value);
+       let op = document.getElementById("output")
+       let filename = "";
+       let msg ="";
 
+       if (user == correct){
+              filename = "correct.webp";
+              msg = 'correct! <br> <img src="${filename}">';
+       
+       }else{
+              filename ="incorrect.avif";
+              msg = 'Incorrect. The correct answer is $(correct). <br> <img src="${filename}">';
+        }
+       op.innerHTML = msg;
+
+       }
+       

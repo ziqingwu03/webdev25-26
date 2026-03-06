@@ -13,16 +13,22 @@ Year 3: $xxxxxx
 Year N: $xxxxxx
 */
 
-function CalculateCompound ()
-let output = document.getElementById("output").value;
-let Amount = parseFloat(document.getElementBy("A").value);
-let yrs = parseInt(document.getElementBy("T").value);
-let r = parseFloat(document.getElementBy("R").value);
-let n = parseInt(document.getElementBy("N").value);
+function compound_int (){
+    let output= document.getElementBy("output");
+    let Amount = parseFloat(document.getElementBy("A").value);
+    let p = parseFloat(document.getElementBy("A").value);
+    let yrs = parseInt(document.getElementBy("T").value);
+    let r = parseFloat(document.getElementBy("R").value);
+    let n = parseInt(document.getElementBy("N").value);
+    let buttom = document.getElementBy("buttom").value);
+    let bulid ="";
 
-let bulid ="";
     for (let t=0; t<=yrs; t+=1){
-        let A = p*1 + r/n
-        build += 'year ${t}: $ $[A} <br>';
+        let A = p *Math.pow(1 + r/n, n*t);
+        build += 'year ${t}: $ $[A.toFixed(2)} <br>';
     }
+ output.innerHtml=bulid;
+
+}
+
 

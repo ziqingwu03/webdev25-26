@@ -9,26 +9,25 @@
            Note: When interpolating the balance, use a.toFixed(2) to adjust the amounts to two decimal places.  
         6) After the for loop complete building the table and display it
 */
-
 function balance(){
          let output = document.getElementById("output");
-         let P = parseFloat(document.getElementBy("p").value);
-         let r = parseFloat(document.getElementBy("r").value);
-         let years = parseInt(document.getElementBy("t").value);
-         let bulid ="";
+         let P = parseFloat(document.getElementById("p").value);
+         let r = parseFloat(document.getElementById("r").value);
+         let years = parseInt(document.getElementById("t").value);
+         let build ="";
          build += `<table>
-                        <tr> <th> years </th> <th> balance </th> </tr>`
-                for(let t=0; t<=years; t++){
-                        let A = p *Math.pow(1 + (r/100), t);
-                        bulid+= `<tr>
-                                        <td> ${t}</td>
-                                        <td> ${A.toFixed(2)}</td?>
-                                </tr>`
-                }
+                        <tr> <th> years </th> <th> balance </th> </tr>`;
+        for(let t=0; t<=years; t++){
+                let A = p *Math.pow(1 + (r/100), t);
+                build+= `<tr>
+                                <td> ${t}</td>
+                                <td> $${A.toFixed(2)}</td?>
+                        </tr>`
+        }
 
-        bulid+="</table>";
-        output.innerHtml=bulid;
-                
+        build += "</table>";
+        output.innerHTML=build;
+}            
 
 /* Challenge Bonus: Allow the user to enter n.  This will require you to modify,
         1) Retrieve the value of n from the user.
@@ -38,4 +37,4 @@ function balance(){
               b. n = 12 then the interest is compounded monthly
               c. n = 3 then the interest is compounded quarterly
               d. n = 2 then the interest is compounded bi-yearly
-*/ 
+*/

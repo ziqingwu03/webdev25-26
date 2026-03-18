@@ -11,9 +11,24 @@
 */
 
 function balance(){
+         let output = document.getElementById("output");
+         let P = parseFloat(document.getElementBy("p").value);
+         let r = parseFloat(document.getElementBy("r").value);
+         let years = parseInt(document.getElementBy("t").value);
+         let bulid ="";
+         build += `<table>
+                        <tr> <th> years </th> <th> balance </th> </tr>`
+                for(let t=0; t<=years; t++){
+                        let A = p *Math.pow(1 + (r/100), t);
+                        bulid+= `<tr>
+                                        <td> ${t}</td>
+                                        <td> ${A.toFixed(2)}</td?>
+                                </tr>`
+                }
 
-
-}
+        bulid+="</table>";
+        output.innerHtml=bulid;
+                
 
 /* Challenge Bonus: Allow the user to enter n.  This will require you to modify,
         1) Retrieve the value of n from the user.

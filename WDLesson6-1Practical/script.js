@@ -56,11 +56,11 @@ m.innerHTML = build;
 
   //Challenge 6:  Build cards for the desserts. Place the build in the dessert container.
 build =` `;
-for (let index = 0; index < desserts_images.length; index++) {
+for (let index = 0; index < dessert_images.length; index++) {
   build += `<div class="card">
-                  <h3>${desserts_titles[index]}</h3>
-                  <img class="food" src="images/${desserts_images[index]}">
-                  <h4>$${desserts_prices[index]}</h4>
+                  <h3>${dessert_titles[index]}</h3>
+                  <img class="food" src="images/${dessert_images[index]}">
+                  <h4>$${dessert_prices[index]}</h4>
                   </div>`;
 }
 d.innerHTML = build;

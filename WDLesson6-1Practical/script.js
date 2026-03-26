@@ -36,7 +36,7 @@ function init(){
   //Challenge 4:  Build cards for the meats. Place the build in the meat container. 
 for (let index = 0; index < meat_images.length; index++) {
         build += `<div class="card">
-        <h3>${meat_tittles[index]}</h3>
+        <h3>${meat_titles[index]}</h3>
         <img class ="food" src="images/$[meat_images[index]}">
         <h4>${meat_prices[index]}</h4>
     </div>`;

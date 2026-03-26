@@ -14,7 +14,7 @@ let seafood_images = [ "clams.jpg", "crabs.jpg", "lobster.png", "scallops.jpg", 
 let seafood_prices = [12.55, 14.99, 2.44, 3.66, 12.44, 3.99];
 let seafood_titles = ["clams", "crabs", "lobster", "scallops", "shrimp", "tuna"];
 
-let dessert_images = ["flan.jpg", "passionberry.jpg", "oreocup.jpg"];
+let dessert_images = ["flan.jpg", "passionberry.jpeg", "oreocup.jpg"];
 let dessert_prices = [4.00, 6.77, 3.99];
 let dessert_titles = ["flan", "passionberry", "oreocup"];
 
@@ -37,11 +37,11 @@ function init(){
 for (let index = 0; index < meat_images.length; index++) {
         build += `<div class="card">
         <h3>${meat_titles[index]}</h3>
-        <img class ="food" src="images/$[meat_images[index]}">
-        <h4>${meat_prices[index]}</h4>
+        <img class ="food" src="images/${meat_images[index]}">
+        <h4>$${meat_prices[index]}</h4>
     </div>`;
 }
-s.innerHTML = build;
+m.innerHTML = build;
 
   //Challenge 5:  Build cards for the seafoods. Place the build in the seafood container.
 build =` `;
@@ -52,7 +52,7 @@ for (let index = 0; index < seafood_images.length; index++) {
                   <h4>$${seafood_prices[index]}</h4>
                   </div>`;
 }
-m.innerHTML = build;
+s.innerHTML = build;
 
   //Challenge 6:  Build cards for the desserts. Place the build in the dessert container.
 build =` `;

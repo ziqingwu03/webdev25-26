@@ -23,7 +23,7 @@ function artist(){
     "name":"Talyor Swift",
     "image":"https://images.hdqwalls.com/wallpapers/2018-taylor-swift-9v.jpg",
     "album":"midnights",
-    "url":"https://images.hdqwalls.com/wallpapers/2018-taylor-swift-9v.jpg"
+    "url":"https://www.facebook.com/TaylorSwift/"
   };
   let output = document.getElementById("output");
          

@@ -11,15 +11,15 @@ async function init(){
   for(let i = 0; i < data.length; i+=1){
     let collision  = data[i];
     build += `<div class="fitted card">
-                 <h3>${collision.crash_date}</h3>
+                  <h3>${collision.crash_date}</h3>
                  <hr>
-                 <p>${complaint.borough}</p>
-                 <p>${complaint.incident_zip}</p>
-                 <p>${complaint.descriptor}</p>
+                 <p>${collision.crash_time}</p>
+                <p>${collision.number_of_persons_injured}</p>
+                <p>${collision.number_of_persons_killed}</p>
                  <hr>
-                 <p>${complaint.created_date}</p>
-                 <hr>
-                 <p>${complaint.agency}</p>
+                <p>${collision.number_of_pedestrians_injured}</p>
+                <hr>
+                <p>${collision.number_of_pedestrians_killed}</p>
               </div>`    
   }
   output.innerHTML = build;
@@ -35,19 +35,19 @@ function filterByBorough(){
   let ct = 0;
 
   for(let i = 0; i < data.length; i+=1){
-    let complaint = data[i];
-    if(complaint.borough == borough){
-      build += `<div class="fitted card">
-                    <h3>${complaint.complaint_type}</h3>
-                    <hr>
-                    <p>${complaint.borough}</p>
-                    <p>${complaint.incident_zip}</p>
-                    <p>${complaint.descriptor}</p>
-                    <hr>
-                    <p>${complaint.created_date}</p>
-                    <hr>
-                    <p>${complaint.agency}</p>
-                </div>`;
+    let collision = data[i];
+    if(collison.borough == borough){
+       build += `<div class="fitted card">
+        <h3>${collision.crash_date}</h3>
+        <hr>
+        <p>${collision.crash_time}</p>
+        <p>${collision.number_of_persons_injured}</p>
+        <p>${collision.number_of_persons_killed}</p>
+        <hr>
+        <p>${collision.number_of_pedestrians_injured}</p>
+        <hr>
+        <p>${collision.number_of_pedestrians_killed}</p>
+      </div>`;
       ct += 1;
     }
   }
@@ -57,25 +57,27 @@ function filterByBorough(){
 
 // Challenge 2: Create an event handler (function) to filter the 311 Service Request by zip code.
 function filterByZip(){
+  let output = document.getElementById("output");
+  let result = document.getElementById("result");
   let zipcode = document.getElementById("zipcode").value;
 
   let build = "";
   let ct = 0;
 
   for(let i = 0; i < data.length; i++){
-    let complaint = data[i];
+    let collision = data[i];
 
-    if(complaint.incident_zip == zipcode){
+     if(collison.zipcode == zipcode){
       build += `<div class="fitted card">
-        <h3>${complaint.complaint_type}</h3>
+        <h3>${collision.crash_date}</h3>
         <hr>
-        <p>${complaint.borough}</p>
-        <p>${complaint.incident_zip}</p>
-        <p>${complaint.descriptor}</p>
+        <p>${collision.crash_time}</p>
+        <p>${collision.number_of_persons_injured}</p>
+        <p>${collision.number_of_persons_killed}</p>
         <hr>
-        <p>${complaint.created_date}</p>
+        <p>${collision.number_of_pedestrians_injured}</p>
         <hr>
-        <p>${complaint.agency}</p>
+        <p>${collision.number_of_pedestrians_killed}</p>
       </div>`;
        ct += 1;
     }
@@ -86,32 +88,32 @@ function filterByZip(){
 
 
 // Challenge 4: Create an event handler (function) to filter the 311 Service Request by complaint type.
-function filterByComplaint(){
-  let type = document.getElementById("complaint").value.toUpperCase();
+function filterByCrash(){
+  let output = document.getElementById("output");
+  let result = document.getElementById("result");
+  let crash = document.getElementById("record").value;
 
   let build = "";
-  
+  let ct = 0;
 
   for(let i = 0; i < data.length; i++){
-    build += 1
-    let complaint = data[i];
-
-    if(complaint.complaint_type.toUpperCase() == type){
+    let collision = data[i];
+    
+     if(collison.crash == crash){
       build += `<div class="fitted card">
-        <h3>${complaint.complaint_type}</h3>
+        <h3>${collision.crash_date}</h3>
         <hr>
-        <p>${complaint.borough}</p>
-        <p>${complaint.incident_zip}</p>
-        <p>${complaint.descriptor}</p>
+        <p>${collision.crash_time}</p>
+        <p>${collision.number_of_persons_injured}</p>
+        <p>${collision.number_of_persons_killed}</p>
         <hr>
-        <p>${complaint.created_date}</p>
+        <p>${collision.number_of_pedestrians_injured}</p>
         <hr>
-        <p>${complaint.agency}</p>
+        <p>${collision.number_of_pedestrians_killed}</p>
       </div>`;
-      ct += 1;
+       ct += 1;
     }
   }
   result.innerHTML = `${ct} Results found.`
   output.innerHTML = build;
 }
-

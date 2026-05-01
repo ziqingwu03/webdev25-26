@@ -37,7 +37,7 @@ function filterByPersonKilled(){
 
   for(let i = 0; i < data.length; i+=1){
     let collision = data[i];
-    if(collison.number_of_persons_killed == personkilled){
+    if(collision.number_of_persons_killed == personkilled){
        build += `<div class="fitted card">
         <h3>${collision.crash_date}</h3>
                  <hr>
@@ -59,10 +59,10 @@ function filterByPersonKilled(){
 }
 
 // Challenge 2: Create an event handler (function) to filter the 311 Service Request by zip code.
-function filterByZip(){
+function filterByPersonInjured(){
   let output = document.getElementById("output");
   let result = document.getElementById("result");
-  let zipcode = document.getElementById("zipcode").value;
+  let personinjured = parseInt(document.getElementById("personinjured").value);
 
   let build = "";
   let ct = 0;
@@ -70,7 +70,7 @@ function filterByZip(){
   for(let i = 0; i < data.length; i++){
     let collision = data[i];
 
-     if(collison.zipcode == zipcode){
+     if(collision.collision.number_of_persons_injured == personinjured){
       build += `<div class="fitted card">
         <h3>${collision.crash_date}</h3>
                  <hr>
@@ -103,7 +103,7 @@ function filterByCrash(){
   for(let i = 0; i < data.length; i++){
     let collision = data[i];
     
-     if(collison.crash == crash){
+     if(collision.crash == crash){
       build += `<div class="fitted card">
         <h3>${collision.crash_date}</h3>
                  <hr>

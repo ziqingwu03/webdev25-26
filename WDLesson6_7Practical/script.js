@@ -1,7 +1,7 @@
 let data, info;
 
 async function init(){   
-  let link = "mvc.jason"; //let link = "https://data.cityofnewyork.us/resource/h9gi-nx95.json";
+  let link = "mvc.json"; //let link = "https://data.cityofnewyork.us/resource/h9gi-nx95.json";
   info = await fetch(link);
   data = await info.json();
   
@@ -13,22 +13,23 @@ async function init(){
     build += `<div class="fitted card">
                   <h3>${collision.crash_date}</h3>
                  <hr>
-                 <p>${collision.crash_time}</p>
-                <p>${collision.number_of_persons_injured}</p>
-                <p>${collision.number_of_persons_killed}</p>
-                 <hr>
-                <p>${collision.number_of_pedestrians_injured}</p>
+                 <p>Crashtime: ${collision.crash_time}</p>
+                <p># of persons injured: ${collision.number_of_persons_injured}</p>
                 <hr>
-                <p>${collision.number_of_pedestrians_killed}</p>
-              </div>`    
+                <p># of persons killed:${collision.number_of_persons_killed}</p>
+                 <hr>
+                <p># of pedestrians injured: ${collision.number_of_pedestrians_injured}</p>
+                <hr>
+                <p># of pedstrains kileld: ${collision.number_of_pedestrians_killed}</p>
+              </div>`;    
   }
   output.innerHTML = build;
 }
 
 // Code below demonstrates the basic process to filter information by borough. Use this as a guide for Challenges 2 and 4 below.
-function filterByBorough(){
+function filterByPersonKilled(){
   let output = document.getElementById("output");
-  let borough = document.getElementById("borough").value;
+  let personkilled = parseInt(document.getElementById("personkilled").value);
   let result = document.getElementById("result");
   
   let build = "";
@@ -36,18 +37,20 @@ function filterByBorough(){
 
   for(let i = 0; i < data.length; i+=1){
     let collision = data[i];
-    if(collison.borough == borough){
+    if(collison.number_of_persons_killed == personkilled){
        build += `<div class="fitted card">
         <h3>${collision.crash_date}</h3>
-        <hr>
-        <p>${collision.crash_time}</p>
-        <p>${collision.number_of_persons_injured}</p>
-        <p>${collision.number_of_persons_killed}</p>
-        <hr>
-        <p>${collision.number_of_pedestrians_injured}</p>
-        <hr>
-        <p>${collision.number_of_pedestrians_killed}</p>
-      </div>`;
+                 <hr>
+                 <p>Crashtime: ${collision.crash_time}</p>
+                <p># of persons injured: ${collision.number_of_persons_injured}</p>
+                <hr>
+                <p># of persons killed:${collision.number_of_persons_killed}</p>
+                 <hr>
+                <p># of pedestrians injured: ${collision.number_of_pedestrians_injured}</p>
+                <hr>
+                <p># of pedstrains kileld: ${collision.number_of_pedestrians_killed}</p>
+              </div>`; 
+
       ct += 1;
     }
   }
@@ -70,15 +73,16 @@ function filterByZip(){
      if(collison.zipcode == zipcode){
       build += `<div class="fitted card">
         <h3>${collision.crash_date}</h3>
-        <hr>
-        <p>${collision.crash_time}</p>
-        <p>${collision.number_of_persons_injured}</p>
-        <p>${collision.number_of_persons_killed}</p>
-        <hr>
-        <p>${collision.number_of_pedestrians_injured}</p>
-        <hr>
-        <p>${collision.number_of_pedestrians_killed}</p>
-      </div>`;
+                 <hr>
+                 <p>Crashtime: ${collision.crash_time}</p>
+                <p># of persons injured: ${collision.number_of_persons_injured}</p>
+                <hr>
+                <p># of persons killed:${collision.number_of_persons_killed}</p>
+                 <hr>
+                <p># of pedestrians injured: ${collision.number_of_pedestrians_injured}</p>
+                <hr>
+                <p># of pedstrains kileld: ${collision.number_of_pedestrians_killed}</p>
+              </div>`; 
        ct += 1;
     }
   }
@@ -102,18 +106,20 @@ function filterByCrash(){
      if(collison.crash == crash){
       build += `<div class="fitted card">
         <h3>${collision.crash_date}</h3>
-        <hr>
-        <p>${collision.crash_time}</p>
-        <p>${collision.number_of_persons_injured}</p>
-        <p>${collision.number_of_persons_killed}</p>
-        <hr>
-        <p>${collision.number_of_pedestrians_injured}</p>
-        <hr>
-        <p>${collision.number_of_pedestrians_killed}</p>
-      </div>`;
+                 <hr>
+                 <p>Crashtime: ${collision.crash_time}</p>
+                <p># of persons injured: ${collision.number_of_persons_injured}</p>
+                <hr>
+                <p># of persons killed:${collision.number_of_persons_killed}</p>
+                 <hr>
+                <p># of pedestrians injured: ${collision.number_of_pedestrians_injured}</p>
+                <hr>
+                <p># of pedstrains kileld: ${collision.number_of_pedestrians_killed}</p>
+              </div>`; ;
        ct += 1;
     }
   }
   result.innerHTML = `${ct} Results found.`
   output.innerHTML = build;
 }
+

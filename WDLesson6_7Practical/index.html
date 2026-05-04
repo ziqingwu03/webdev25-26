@@ -11,8 +11,8 @@
   <body onload="init()">
     <div id="banner" class="container center">
       <div style="text-align:center">
-          <h1>NYC Open Data</h1>
-          <h2>Filtering 311 Complaints</h2>
+          <h1>NYC open Data</h1>
+          <h2>Filtering mvs collision</h2>
       </div>
     </div>
 
@@ -31,28 +31,28 @@
       <div id="leftPanel">
         <!--Card below is the basic HTML to use for Challenge 1 and 3 -->
         <div class="card">
-          <h3>SEARCH By Person Killed</h3>
-          <input type="text" id="personkiled" placeholder="Enter personkilled ">
+          <h3>SEARCH By borough</h3>
+          <input type="text" id="borough" placeholder="Enter borough">
           <hr></hr>
-          <a class="button" onclick="filterByPersonKilled()"> Search </a>
+          <a class="button" onclick="filterByBorough()"> Search </a>
         </div>
 
         <!--Challenge 1: Create another UI in order to filter by zip code. [See Challenge 2 in script.js] -->
         <div class="card">
-          <h3>SEARCH by Person Injured </h3>
-          <input type="text" id="personinjured" placeholder="Enter Person Injured">
+          <h3>SEARCH by facor vehicle </h3>
+          <input type="text" id="contribuingfactorvehcile" placeholder="Enter factor vehicle">
           <hr></hr>
-          <a class="button" onclick="filterByPersonInjured()">Search</a>
+          <a class="button" onclick="filterByContributingFactorVehicle()">Search</a>
           </div>
 
 
 
         <!--Challenge 3: Create another UI in order to filter by collision type. [See Challenge 4 in script.js] -->
       <div class="card">
-        <h3>SEARCH by crash Type</h3>
-        <input type="text" id="crash" placeholder="Enter crash Type">
+        <h3>SEARCH by Vehicle Type</h3>
+        <input type="text" id="Type" placeholder="Enter Vehicle Type">
         <hr></hr>
-        <a class="button" onclick="filterByCarsh()">Search</a>
+        <a class="button" onclick="filterByVehicleType()">Search</a>
       </div>
 
       </div>

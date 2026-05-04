@@ -14,22 +14,22 @@ async function init(){
                   <h3>${collision.crash_date}</h3>
                  <hr>
                  <p>Crashtime: ${collision.crash_time}</p>
-                <p># of persons injured: ${collision.number_of_persons_injured}</p>
+                <p> borough: ${collision.borough}</p>
                 <hr>
                 <p># of persons killed:${collision.number_of_persons_killed}</p>
                  <hr>
-                <p># of pedestrians injured: ${collision.number_of_pedestrians_injured}</p>
+                <p>factor vehicle: ${collision.contributing_factor_vehicle_1}</p>
                 <hr>
-                <p># of pedstrains kileld: ${collision.number_of_pedestrians_killed}</p>
+                <p>Vehicle Type: ${collision.vehicle_type_code2}</p>
               </div>`;    
   }
   output.innerHTML = build;
 }
 
 // Code below demonstrates the basic process to filter information by borough. Use this as a guide for Challenges 2 and 4 below.
-function filterByPersonKilled(){
+function filterByBorough(){
   let output = document.getElementById("output");
-  let personkilled = parseInt(document.getElementById("personkilled").value);
+  let borough = document.getElementById("borough").value;
   let result = document.getElementById("result");
   
   let build = "";
@@ -37,18 +37,19 @@ function filterByPersonKilled(){
 
   for(let i = 0; i < data.length; i+=1){
     let collision = data[i];
-    if(collision.number_of_persons_killed == personkilled){
+    if (collision.borough == borough){
+  
        build += `<div class="fitted card">
-        <h3>${collision.crash_date}</h3>
+                  <h3>${collision.crash_date}</h3>
                  <hr>
                  <p>Crashtime: ${collision.crash_time}</p>
-                <p># of persons injured: ${collision.number_of_persons_injured}</p>
+                <p>borough: ${collision.borough}</p>
                 <hr>
                 <p># of persons killed:${collision.number_of_persons_killed}</p>
                  <hr>
-                <p># of pedestrians injured: ${collision.number_of_pedestrians_injured}</p>
+                <p>factor vehicle: ${collision.contributing_factor_vehicle_1}</p>
                 <hr>
-                <p># of pedstrains kileld: ${collision.number_of_pedestrians_killed}</p>
+                <p>Vehicle Type: ${collision.vehicle_type_code2}</p>
               </div>`; 
 
       ct += 1;
@@ -59,10 +60,10 @@ function filterByPersonKilled(){
 }
 
 // Challenge 2: Create an event handler (function) to filter the 311 Service Request by zip code.
-function filterByPersonInjured(){
+function filterByContributingFactorVehicle(){
   let output = document.getElementById("output");
   let result = document.getElementById("result");
-  let personinjured = parseInt(document.getElementById("personinjured").value);
+  let ContributingFactorVehicle = document.getElementById("contribuingfactorvehcile").value;
 
   let build = "";
   let ct = 0;
@@ -70,18 +71,18 @@ function filterByPersonInjured(){
   for(let i = 0; i < data.length; i++){
     let collision = data[i];
 
-     if(collision.collision.number_of_persons_injured == personinjured){
+     if(collision.contributing_factor_vehicle_1 === ContributingFactorVehicle){
       build += `<div class="fitted card">
         <h3>${collision.crash_date}</h3>
                  <hr>
                  <p>Crashtime: ${collision.crash_time}</p>
-                <p># of persons injured: ${collision.number_of_persons_injured}</p>
+                <p>borough: ${collision.borough}</p>
                 <hr>
                 <p># of persons killed:${collision.number_of_persons_killed}</p>
                  <hr>
-                <p># of pedestrians injured: ${collision.number_of_pedestrians_injured}</p>
+                <p>factor vehicle: ${collision.contributing_factor_vehicle_1}</p>
                 <hr>
-                <p># of pedstrains kileld: ${collision.number_of_pedestrians_killed}</p>
+                <p>Vehicle Type: ${collision.vehicle_type_code2}</p>
               </div>`; 
        ct += 1;
     }
@@ -92,29 +93,29 @@ function filterByPersonInjured(){
 
 
 // Challenge 4: Create an event handler (function) to filter the 311 Service Request by complaint type.
-function filterByCrash(){
+function filterByVehicleType(){
   let output = document.getElementById("output");
   let result = document.getElementById("result");
-  let crash = document.getElementById("record").value;
+  let VehicleType = document.getElementById("Type").value;
 
   let build = "";
   let ct = 0;
 
   for(let i = 0; i < data.length; i++){
+
     let collision = data[i];
-    
-     if(collision.crash == crash){
+    if(collision.vehicle_type_code2 == VehicleType){
       build += `<div class="fitted card">
         <h3>${collision.crash_date}</h3>
                  <hr>
                  <p>Crashtime: ${collision.crash_time}</p>
-                <p># of persons injured: ${collision.number_of_persons_injured}</p>
+                <p>borough: ${collision.borough}</p>
                 <hr>
                 <p># of persons killed:${collision.number_of_persons_killed}</p>
                  <hr>
-                <p># of pedestrians injured: ${collision.number_of_pedestrians_injured}</p>
+                <p>factor vehicle: ${collision.contributing_factor_vehicle_1}</p>
                 <hr>
-                <p># of pedstrains kileld: ${collision.number_of_pedestrians_killed}</p>
+                <p>Vehicle Type: ${collision.vehicle_type_code2}</p>
               </div>`; ;
        ct += 1;
     }

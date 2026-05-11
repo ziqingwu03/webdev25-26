@@ -8,24 +8,47 @@ async function init(){
   data = await info.json();
 
   output = get("output");
+  result = get("Result");
   let build = "";
   let ct = 0;
 
   //Challenge 2: Test the function card() developed in Challenge 1 by displaying only the first violation to the webpage.(no for loop) data[0]
-  
-  output.innerHTML = card( data[0] );
+//output.innerHTML = card(data[0]);
+output.innerHTML = cards(data);
 }
 
 
+
   //Challenge 3: Display all the violations to the web page using the function card().(for loop
-
-  for(let i = 0; i < data.length; i++){
-    let parking = data[i];
-    build += card(parking); 
-    ct++;
-  }
-  result.innerHTML = `${ct} Results found`;
-  output.innerHTML = build;
-
+ function cards(parking){
+  let build = "";
+      for(let i = 0; i < parking.length; i++){
+      build += card(parking[i]);
+    }
+    return build;
+}
 
 // Challenge 4: Create a function to filter the information and display only the cards that satisfy specfic condition(s). (searh)
+function filterByStates(){
+  let state=get("state").value;
+  let build = "";
+       for(let i = 0; i < data.length; i++){
+         if(data[i].state == state){
+            build += card(data[i]);
+    }
+
+    }
+   output.innerHTML= build;
+}
+
+function filterByCounty(){
+  let county=get("county").value;
+  let build = "";
+       for(let i = 0; i < data.length; i++){
+         if(data[i].county == county){
+            build += card(data[i]);
+    }
+
+    }
+   output.innerHTML= build; 
+  }

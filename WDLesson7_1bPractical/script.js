@@ -14,41 +14,40 @@ async function init(){
 
   //Challenge 2: Test the function card() developed in Challenge 1 by displaying only the first violation to the webpage.(no for loop) data[0]
 //output.innerHTML = card(data[0]);
+
+//let FirstParking =data[0];
+//build+= card(Firstparking);
+//ct++;
 output.innerHTML = cards(data);
 }
 
 
 
   //Challenge 3: Display all the violations to the web page using the function card().(for loop
- function cards(parking){
-  let build = "";
-      for(let i = 0; i < parking.length; i++){
-      build += card(parking[i]);
+for(let i = 0; i < data.length; i++){
+    let violation = data[i];
+      build += card(violation);
+      ct++;
     }
-    return build;
-}
 
+   reslut.innerHTML = `${ct} Results found `;
+   output.innerHTML= build;
+
+  
 // Challenge 4: Create a function to filter the information and display only the cards that satisfy specfic condition(s). (searh)
 function filterByStates(){
-  let state=get("state").value;
+  let states = get("parking_state").value;
+  output = get("output");
+  result = get ("reslut");
   let build = "";
-       for(let i = 0; i < data.length; i++){
-         if(data[i].state == state){
-            build += card(data[i]);
+  let ct = 0;
+    
+  for(let i = 0; i < data.length; i++){
+    let violation = data[i];
+      if(states==violation.parking_state){
+        build += card(violation);
     }
-
-    }
+   }
+   reslut.innerHTML = `${ct} Results found `;
    output.innerHTML= build;
 }
-
-function filterByCounty(){
-  let county=get("county").value;
-  let build = "";
-       for(let i = 0; i < data.length; i++){
-         if(data[i].county == county){
-            build += card(data[i]);
-    }
-
-    }
-   output.innerHTML= build; 
-  }

@@ -7,12 +7,13 @@ function get(id){
 //Challenge 1: Create a function card() that accepts the JSON data for each violation, then generates and returns an appropriate card for the violation.
 function card(parking){
   let build="";
-    build+= `<div class="card">
+    build+= `<div class=" card">
                <h3>state: ${parking.state}</h3>
                 <p>license type: ${parking.license_type}</p>
                 <p>county: ${parking.county}</p>
                 <p>parking date: ${parking.issue_date}</p>
-    </div>`;
+              </div>`;
+              
     return build;
 }
 

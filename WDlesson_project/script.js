@@ -1,3 +1,30 @@
+let data, info;
+
+async function init(){   
+  let link = "data.json"; //let link = "https://data.cityofnewyork.us/resource/c3uy-2p5r.json";
+  info = await fetch(link);
+  data = await info.json();
+  
+  let output = document.getElementById("output");
+  let build = "";
+
+  for(let i = 0; i < data.length; i++){
+    let tree  = data[i];
+    build += `<div class="fitted card">
+                  <h3>${tree.name}</h3>
+                 <hr>
+                 <p>measure: ${tree.measure}</p>
+                <p> geo type name: ${tree.geo_type_name}</p>
+                <hr>
+                <p> time period:${tree.time_period}</p>
+                 <hr>
+                <p>geo_place_name: ${tree.geo_place_name}</p>
+                <hr>
+                <p>start date: ${tree.start_date}</p>
+              </div>`;    
+  }
+  output.innerHTML = build;
+}
 
 // Code below demonstrates the basic process to filter information by borough. Use this as a guide for Challenges 2 and 4 below.
 function filterByName(){
@@ -96,3 +123,4 @@ function filterByGeoTypeName(){
   result.innerHTML = `${ct} Results found.`
   output.innerHTML = build;
 }
+

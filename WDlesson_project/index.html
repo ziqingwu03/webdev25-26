@@ -1,12 +1,30 @@
 <html>
   <head>
-    <title>WD Lesson 2.6 Practical</title>
+    <title>Home page </title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="script.js"></script>
+     <script src="script.js"></script>
     <style>
               body {background-color:rgb(201, 145, 155)}
 
 </style>
+</head>
+<body>
+
+    <nav class="container" id="banner">
+      <a href="index.html">Home page</a>
+        <a href="infopage.html">Info page </a>
+        <a href="chart.html">Chart page</a>
+      </nav>
+    <div id="banner">
+       <h1>Home page</h1>
+    </div>
+    
+    <p>Welcome to the NYC Open Data website.</p>
+
+</body>
+
+</html>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,6 +35,13 @@
     <script src="script.js"></script>
    </head>
 
+
+
+
+
+
+
+   <!--card code-->
   <body onload="init()">
     <div id="banner" class="container center">
       <div style="text-align:center">
@@ -25,33 +50,37 @@
       </div>
     </div>
 
-    <div class="container subbanner">
+        <div class="containar subbanner">
       <div>
-        <p>This practical challenges students to provide various ways to filter  
-          311 Service Requests (Complaints) retrieved from NYC Open Data.</p>
-        <a class="button" href="https://opendata.cityofnewyork.us/" target="_blank">NYC Open Data</a> 
+        <p>following is the data card from nyc open data on tree enviornment.</p>
+
+
+        <!--<a class="button" href="https://opendata.cityofnewyork.us/" target="_blank">NYC Open Data</a> 
         <a class="button" target="_blank" href="https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2020-to-Present/erm2-nwe9/about_data"
 "> 311 Service Request</a>
-        <a class="button" target="_blank" href="https://jsoneditoronline.org/"> JSON Editor Online</a>
-       </div>
+        <a class="button" target="_blank" href="https://jsoneditoronline.org/"> JSON Editor Online</a>-->
+      
+      
+      </div>
     </div>
+
 
     <div class="container">
       <div id="leftPanel">
         <!--Card below is the basic HTML to use for Challenge 1 and 3 -->
         <div class="card">
           <h3>SEARCH By name </h3>
-          <input type="text" id="borough" placeholder="Enter name">
+          <input type="text" id="name" placeholder="Enter name">
           <hr></hr>
-          <a class="button" onclick="filterByname()"> Search </a>
+          <a class="button" onclick="filterByName()"> Search </a>
         </div>
 
         <!--Challenge 1: Create another UI in order to filter by zip code. [See Challenge 2 in script.js] -->
         <div class="card">
-          <h3>SEARCH by Measure </h3>
-          <input type="text" id="contribuingfactorvehcile" placeholder="Enter measure">
+          <h3>SEARCH by Geo place name </h3>
+          <input type="text" id="geoplacename" placeholder="Enter Geo place name">
           <hr></hr>
-          <a class="button" onclick="filterByMeasure()">Search</a>
+          <a class="button" onclick="filterByGeoPlaceName()">Search</a>
           </div>
 
 

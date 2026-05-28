@@ -29,7 +29,7 @@ async function init(){
 // Code below demonstrates the basic process to filter information by borough. Use this as a guide for Challenges 2 and 4 below.
 function filterByName(){
   let output = document.getElementById("output");
-  let Name = document.getElementById("borough").value;
+  let Name = document.getElementById("name").value;
   let result = document.getElementById("result");
   
   let build = "";
@@ -37,7 +37,7 @@ function filterByName(){
 
   for(let i = 0; i < data.length; i+=1){
     let tree = data[i];
-    if (tree.name == Name){
+    if (tree.name ==Name){
   
        build += `<div class="fitted card">
                   <h3>${tree.name}</h3>
@@ -60,10 +60,10 @@ function filterByName(){
 }
 
 // Challenge 2: Create an event handler (function) to filter the 311 Service Request by zip code.
-function filterByMeasure(){
+function filterByGeoPlaceName(){
   let output = document.getElementById("output");
   let result = document.getElementById("result");
-  let Measure = document.getElementById("contribuingfactorvehcile").value;
+  let GeoPlaceName = document.getElementById("geoplacename").value;
 
   let build = "";
   let ct = 0;
@@ -71,7 +71,7 @@ function filterByMeasure(){
   for(let i = 0; i < data.length; i++){
     let tree = data[i];
 
-     if(tree.measure === Measure){
+     if(tree.geo_place_name === GeoPlaceName){
       build += `<div class="fitted card">
                   <h3>${tree.name}</h3>
                  <hr>

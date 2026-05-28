@@ -25,10 +25,10 @@ nav a:hover{
   color:white;
 }
 .subbanner{
-  background-color:cornflowerblue;
+  background-color:rgb(219, 219, 219);
 }
 #banner{
-  background-color:blue;
+  background-color:rgb(173, 143, 157);
   color:white;
 }
 #footer{
@@ -86,7 +86,7 @@ nav a:hover{
   min-width:200px;
 }
 #result{
-  background-color: yellow;
+  background-color: rgb(196, 196, 182);
   color:red;
   max-width: 200px;
   font-size: 20px;

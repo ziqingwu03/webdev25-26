@@ -28,7 +28,7 @@ nav a:hover{
   background-color:rgb(219, 219, 219);
 }
 #banner{
-  background-color:rgb(173, 143, 157);
+  background-color:rgb(125, 145, 175);
   color:white;
 }
 #footer{
@@ -90,4 +90,15 @@ nav a:hover{
   color:red;
   max-width: 200px;
   font-size: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; 
+    gap:50px
+}
+
+.image-container img {
+    width: 300px;
+    height: auto;
 }

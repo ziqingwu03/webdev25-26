@@ -4,7 +4,7 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
      <script src="script.js"></script>
     <style>
-              body {background-color:rgb(201, 145, 155)}
+              body {background-color:rgb(147, 197, 169)}
 
 </style>
 </head>
@@ -16,95 +16,18 @@
         <a href="chart.html">Chart page</a>
       </nav>
     <div id="banner">
-       <h1>Home page</h1>
-    </div>
-    
-    <p>Welcome to the NYC Open Data website.</p>
+       <h1>Tree enviornment data</h1>
+        <p>Welcome to the NYC Open Data website. In this project we used nyc open tree data collected includes tree species, diameter 
+      and perception of health and turn it into info cards and charts where
+       people can easy find infomation about a specific tree and turning in to charts where people can use as data</p>
+       <div class= "image-container"> 
+       <img src="tree image.jpg" height="300"/>
+      <img src="tree protection.jpg" height="300"/>
+      </div>
+      </div>
+   
 
 </body>
-
 </html>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>NYC Data info PAGE </title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="script.js"></script>
-   </head>
 
-
-
-
-
-
-
-   <!--card code-->
-  <body onload="init()">
-    <div id="banner" class="container center">
-      <div style="text-align:center">
-          <h1>NYC open Data</h1>
-          <h2>info page</h2>
-      </div>
-    </div>
-
-        <div class="containar subbanner">
-      <div>
-        <p>following is the data card from nyc open data on tree enviornment.</p>
-
-
-        <!--<a class="button" href="https://opendata.cityofnewyork.us/" target="_blank">NYC Open Data</a> 
-        <a class="button" target="_blank" href="https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2020-to-Present/erm2-nwe9/about_data"
-"> 311 Service Request</a>
-        <a class="button" target="_blank" href="https://jsoneditoronline.org/"> JSON Editor Online</a>-->
-      
-      
-      </div>
-    </div>
-
-
-    <div class="container">
-      <div id="leftPanel">
-        <!--Card below is the basic HTML to use for Challenge 1 and 3 -->
-        <div class="card">
-          <h3>SEARCH By name </h3>
-          <input type="text" id="name" placeholder="Enter name">
-          <hr></hr>
-          <a class="button" onclick="filterByName()"> Search </a>
-        </div>
-
-        <!--Challenge 1: Create another UI in order to filter by zip code. [See Challenge 2 in script.js] -->
-        <div class="card">
-          <h3>SEARCH by Geo place name </h3>
-          <input type="text" id="geoplacename" placeholder="Enter Geo place name">
-          <hr></hr>
-          <a class="button" onclick="filterByGeoPlaceName()">Search</a>
-          </div>
-
-
-
-        <!--Challenge 3: Create another UI in order to filter by collision type. [See Challenge 4 in script.js] -->
-      <div class="card">
-        <h3>SEARCH by Geo Type Name </h3>
-        <input type="text" id="Type" placeholder="Enter geo type name">
-        <hr></hr>
-        <a class="button" onclick="filterByGeoTypeName()">Search</a>
-      </div>
-
-      </div>
-
-      <div class="card" id="rightPanel">
-        <h1>311 Service Requests</h1>
-        <div id="result" class="container"></div>
-        <div id="output" class="container"></div>
-      </div>
-      
-    </div>
-
-    <div id="footer" class="container center">
-      <h3>DATA PROJECT</h3>
-    </div>  
-  </body>
-</html>

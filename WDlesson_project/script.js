@@ -124,3 +124,9 @@ function filterByGeoTypeName(){
   output.innerHTML = build;
 }
 
+
+
+///following code is for charts///
+
+
+

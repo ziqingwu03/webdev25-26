@@ -27,9 +27,21 @@ nav a:hover{
 .subbanner{
   background-color:rgb(219, 219, 219);
 }
+
 #banner{
   background-color:rgb(125, 145, 175);
   color:white;
+  p {
+  font-size: 20px;
+}
+}
+
+#secondbanner{
+  background-color:rgb(19, 30, 46);
+  color:white;
+  p {
+  font-size: 25px;
+  }
 }
 #footer{
   background-color:cornflowerblue;
@@ -101,4 +113,8 @@ nav a:hover{
 .image-container img {
     width: 300px;
     height: auto;
+}
+
+#intro h1{
+color:aliceblue
 }

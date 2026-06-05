@@ -20,79 +20,69 @@
     </div>
     <h2> Chart Page</h2>
     <p>This page contains information about NYC environmental data.</p>
-</body>
-</html>
+
 
 
 
 
 
 <!-- following is chart code -->
-
 <!DOCTYPE html>
 <html>
-    -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>chart page</title>
-    <!-- Import libraries and link files  -->
-    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <title>Charts Demo A</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- Discussion 1: Import necessary files for charts, C3 and D3 -->
     <link href="c3.css" rel="stylesheet" type="text/css" />
     <script src="c3.js"></script>
     <script src="d3.js"></script>
-    <script src="helper.js"></script>  
+    
     <script src="script.js"></script>
    </head>
-  
-  <body onload="init()">
+   
+  <body>
     <div id="banner" class="container center">
-      <h1> Charts: tree enviornment </h1>
+      <h1> Charts </h1>
     </div>
-    
-  
+    <div class="container subbanner">
+      
     </div>
     <div class="container">
       <div id="panel">
-        
         <div class="card">
-          <h3>Select Chart Type</h3>
-          <select id="chartType" style="width:100px;">
-            <option value="bar">Bar</option>
-            <option value="pie">Pie</option>
-          </select>
-        </div>
-
-
-       
-
-   
-
-   
-
- <div class="card">
-          <h3>click to show chart </h3>
-    
-          <a class="button" onclick="pollutionChart()"> Show Chart </a>
+          <h3>Chart Exploration</h3>
+          <p><span class="highlight">Scenario:</span> Understand the various components required by the c3.generate( ) function. </p>
+        <a class="button" onclick="exploringCharts()"> Display </a>
         </div>
         <div class="card">
-
-
-       <h3> Borough</h3>
-          <p><span class="highlight">Scenario:</span> Aggregate the number of accidents by borough and create a chart to analyze the results.</p>
-          <a class="button" onclick="GeoPlaceName()"> Show Chart </a>
+          <h3>Line Chart</h3>
+          <p><span class="highlight">Scenario:</span> Chart analyzes average grades of Math and English courses by period. </p>
+        <a class="button" onclick="lineChart()"> Display </a>
         </div>
-        
-       
+        <div class="card">
+          <h3>Bar Chart</h3>
+          <p><span class="highlight">Scenario:</span> Chart analyzes average grades of Math and English courses by period. </p>
+          <a class="button" onclick="barChart()"> Display </a>
+        </div>
+        <div class="card">
+          <h3>Pie Chart</h3>
+          <p><span class="highlight">Scenario:</span> Chart displays the number of course taken by subject.</p>
+          <a class="button" onclick="pieChart()"> Display </a>
+        </div>
       </div>
-      
-      <div class="card">
-       <div id="chart"></div> <!-- div for chart -->
+      <div class="card">        
+        <!-- Discussion 2: Provide a div in order to display the chart. div needs an id. -->
+        <div id="chart"></div>
       </div>
     </div>
 
     <div id="footer" class="container center">
-      <h3>tree data chart</h3>
+      <p>© 2026 NYC Data Project</p> 
     </div>  
+
+
   </body>
-</html>   
+</html>
+    

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Chart page</title>
@@ -20,13 +21,14 @@
     </div>
     <h2> Chart Page</h2>
     <p>This page contains information about NYC environmental data.</p>
-
+</body>
 
 
 
 
 
 <!-- following is chart code -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -39,10 +41,17 @@
     <script src="c3.js"></script>
     <script src="d3.js"></script>    
     <script src="script.js"></script>
+    
 
    </head>
-   
- 
+
+
+  <body onload="load()">
+    <div id="banner" class="container center">
+      <div style="text-align:center">
+      </div>
+    </div>
+
     <div id="banner" class="container center">
       <div style="text-align:center">
           <h1> Tree environmental </h1>
@@ -50,7 +59,7 @@
     </div>
 
 
-  
+
 
     <div class="container">
       <p><span class="highlight">Scenario:</span>Chart analyzes the number of complaints by boroughs.</p>
@@ -61,35 +70,17 @@
         <option value="pie">Pie</option>
         <option value="donut">Donut</option>
       </select>
-      <a class="button" onclick="complaintsByBorough()"> Display </a>
+      <a class="button" onclick = "TreesByName()"> Display </a>
     </div>
+
 
     <div class="container subbanner"><br></div>
 
-    <div id="output">
-
-    </div> <!-- div for chart -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div id="output"></div> <!-- div for chart -->
 
     <div id="footer" class="container center">
       <p>© 2026 NYC Data Project</p> 
     </div>  
-
-
   </body>
 </html>
     

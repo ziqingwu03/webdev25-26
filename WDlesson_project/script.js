@@ -1,4 +1,4 @@
-let data, info;
+let data, info, output;
 
 async function init(){   
   let link = "data.json"; //let link = "https://data.cityofnewyork.us/resource/c3uy-2p5r.json";
@@ -126,7 +126,4 @@ function filterByGeoTypeName(){
 
 
 ///following code is for charts//
-
-
-
 

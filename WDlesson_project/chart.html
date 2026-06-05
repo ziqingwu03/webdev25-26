@@ -32,51 +32,60 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Charts Demo A</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <!-- Discussion 1: Import necessary files for charts, C3 and D3 -->
+    <title>Charts Demo-B</title>
+
+    <!-- Import libraries and link files  -->
+    <link href="style.css" rel="stylesheet" type="text/css"/>
     <link href="c3.css" rel="stylesheet" type="text/css" />
     <script src="c3.js"></script>
-    <script src="d3.js"></script>
-    
+    <script src="d3.js"></script>    
     <script src="script.js"></script>
+
    </head>
    
-  <body>
+  <body onload="init()">
     <div id="banner" class="container center">
-      <h1> Charts </h1>
+      <div style="text-align:center">
+          <h1> Aggregating Info for Charts (311 Complaints) </h1>
+      </div>
     </div>
     <div class="container subbanner">
-      
+      <div>
+        <p>This example demonstrates how to aggregate information in order to display the results in chart.  In order to aggregate the information we must traverse the data and keep tallies on each piece of information.  Charts created use information associated 311 Complaint Services data from <a href="https://opendata.cityofnewyork.us/">NYC Open Data</a></p>
+        <h4> Chart analysis of 311 complaints by Borough</h4>
+       </div>
     </div>
+
     <div class="container">
-      <div id="panel">
-        <div class="card">
-          <h3>Chart Exploration</h3>
-          <p><span class="highlight">Scenario:</span> Understand the various components required by the c3.generate( ) function. </p>
-        <a class="button" onclick="exploringCharts()"> Display </a>
-        </div>
-        <div class="card">
-          <h3>Line Chart</h3>
-          <p><span class="highlight">Scenario:</span> Chart analyzes average grades of Math and English courses by period. </p>
-        <a class="button" onclick="lineChart()"> Display </a>
-        </div>
-        <div class="card">
-          <h3>Bar Chart</h3>
-          <p><span class="highlight">Scenario:</span> Chart analyzes average grades of Math and English courses by period. </p>
-          <a class="button" onclick="barChart()"> Display </a>
-        </div>
-        <div class="card">
-          <h3>Pie Chart</h3>
-          <p><span class="highlight">Scenario:</span> Chart displays the number of course taken by subject.</p>
-          <a class="button" onclick="pieChart()"> Display </a>
-        </div>
-      </div>
-      <div class="card">        
-        <!-- Discussion 2: Provide a div in order to display the chart. div needs an id. -->
-        <div id="chart"></div>
-      </div>
+      <p><span class="highlight">Scenario:</span>Chart analyzes the number of complaints by boroughs.</p>
+      <select id="chartType" style="width:200px;">
+        <option>Select Chart Type</option>
+        <option value="line">Line</option>
+        <option value="bar">Bar</option>
+        <option value="pie">Pie</option>
+        <option value="donut">Donut</option>
+      </select>
+      <a class="button" onclick="complaintsByBorough()"> Display </a>
     </div>
+
+    <div class="container subbanner"><br></div>
+
+    <div id="output"></div> <!-- div for chart -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div id="footer" class="container center">
       <p>© 2026 NYC Data Project</p> 
